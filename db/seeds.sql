@@ -1,11 +1,11 @@
 INSERT INTO employee(first_name, last_name, role_id, manager_id)
 VALUES
-    ('Dylan', 'Fair', 1, 100),
-    ('Alayna', 'Bilek', 3, 101),
-    ('Baylee', 'Meyers', 5, 102),
-    ('Auden', 'Rader', 2, 100),
-    ('Lucas', 'Pitzen', 4, 102),
-    ('Joe', 'Deboom', 1, 102);
+    ('Dylan', 'Fair', 1, 100, null),
+    ('Alayna', 'Bilek', 3, 1),
+    ('Baylee', 'Meyers', 5, 1),
+    ('Auden', 'Rader', 2, null),
+    ('Lucas', 'Pitzen', 4, 4),
+    ('Joe', 'Deboom', 1, 4);
 INSERT INTO department(label)
 VALUES
     ('Development'),
@@ -19,4 +19,4 @@ VALUES
     ('Product handler', 35000, 5),
     ('Forklift Operator', 50000, 4),
     ('Represenative', 46000, 3),
-    ('Software Engineer', 150000, 1)
+    ('Software Engineer', 150000, 1);

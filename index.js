@@ -30,7 +30,8 @@ const start = function(){
 }
 
 const viewEmp = function(){
-    const sql = `SELECT * FROM employee`;
+    const sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title,
+        department.label AS department`;
     db.query(sql, (err, rows) => {
         if(err){
             console.log(err);
@@ -52,7 +53,7 @@ const viewRole = function(){
     })
 }
 const viewDep = function(){
-    const sql = `SELECT * FROM department`;
+    const sql = `SELECT department.id AS id, department.label AS department FROM department`;
     db.query(sql, (err, rows) => {
         if(err){
             console.log(err);
