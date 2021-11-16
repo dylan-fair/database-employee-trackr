@@ -46,8 +46,8 @@ const viewEmp = function(){
     })
 }
 const viewRole = function(){
-    const sql = `SELECT roles.id, roles.title, department.name AS department FROM role
-                INNER JOIN department ON role.department_id = department.id`;
+    const sql = `SELECT roles.id, roles.title, department.label AS department FROM roles
+                INNER JOIN department ON roles.department_id = department.id`;
     db.query(sql, (err, rows) => {
         if(err){
             console.log(err);
