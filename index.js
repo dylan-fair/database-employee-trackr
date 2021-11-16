@@ -24,7 +24,7 @@ const start = function(){
         } else if (info === 'Add employee'){
             addEmp();
         } else if (info === 'Update employee'){
-
+            updateEmp();
         }
     })
 }
@@ -157,6 +157,32 @@ const addRole = function(){
                 return
             }
             console.log('Your new role has been added');
+            start();
+        })
+    })
+}
+const updateEmp = function() {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is the Employees ID'
+        },
+        {
+            type: 'input',
+            name: 'newRole',
+            message: 'What is the id of their new role'
+        }
+    ])
+    .then(data => {
+        const sql = `UPDATE employee SET role_id = ? WHERE id = ?`;
+        const params = [data.newRole, data.id];
+        db.query(sql, params, (err) => {
+            if(err){
+                console.log(err)
+                return;
+            }
+            console.log('Your employees role has been updated');
             start();
         })
     })
