@@ -30,8 +30,12 @@ const start = function(){
 }
 
 const viewEmp = function(){
-    const sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title,
-        department.label AS department`;
+    const sql = `SELECT employee.id, employee.first_name, employee.last_name, roles.title, department.label AS department,
+                    roles.salary, CONCAT(manager.first_name, " ", manager.last_name) AS manager
+                FROM employee
+                    LEFT JOIN roles ON employee.role_id = roles.id
+                    LEFT JOIN department ON roles.department_id = department.id
+                    LEFT JOIN employee manager ON employee.manager_id = manager.id `;
     db.query(sql, (err, rows) => {
         if(err){
             console.log(err);
@@ -42,7 +46,8 @@ const viewEmp = function(){
     })
 }
 const viewRole = function(){
-    const sql = `SELECT * FROM roles`;
+    const sql = `SELECT roles.id, roles.title, department.name AS department FROM role
+                INNER JOIN department ON role.department_id = department.id`;
     db.query(sql, (err, rows) => {
         if(err){
             console.log(err);
@@ -53,7 +58,7 @@ const viewRole = function(){
     })
 }
 const viewDep = function(){
-    const sql = `SELECT department.id AS id, department.label AS department FROM department`;
+    const sql = `SELECT * FROM department`;
     db.query(sql, (err, rows) => {
         if(err){
             console.log(err);

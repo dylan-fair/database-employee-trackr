@@ -1,6 +1,6 @@
 INSERT INTO employee(first_name, last_name, role_id, manager_id)
 VALUES
-    ('Dylan', 'Fair', 1, 100, null),
+    ('Dylan', 'Fair', 1, null),
     ('Alayna', 'Bilek', 3, 1),
     ('Baylee', 'Meyers', 5, 1),
     ('Auden', 'Rader', 2, null),
