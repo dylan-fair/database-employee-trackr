@@ -1,0 +1,17 @@
+{
+  "name": "employee_tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquire": "^0.4.8",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
