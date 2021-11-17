@@ -68,19 +68,7 @@ const viewDep = function(){
         start();
     })
 }
-// const getRoles = function(){
-//     const sql = `SELECT * FROM roles`;
-//     db.query(sql, (err, rows) => {
-//         if(err){
-//             console.log(err)
-//             return;
-//         }
-//         for(let i = 0; i < rows.length; i++){
-//             rolesArr.push(rows[i].title);
-//         }
-//     })
-//     return rolesArr;
-//}
+
 const addEmp = function(){
     inquirer.prompt([
         {
